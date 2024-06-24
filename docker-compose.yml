@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # FastAPI приложение
+  # ngw_kpt:
+  #   container_name: nextgis_kpt
+  #   build: ./project
+  #   volumes:
+  #     - ./project:/usr/src/app
+  #   ports:
+  #     - "8000:8000"
+  #     - "5555:5555"
+  #   env_file:
+  #     - .env
+
+  redis:
+    container_name: redis
+    image: redis:7.2.4-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
